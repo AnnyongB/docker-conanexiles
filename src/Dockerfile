@@ -14,14 +14,16 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get install -y apt-utils crudini python3-pip redis-tools software-properties-common supervisor unzip wget xvfb \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
-    && apt-key add winehq.key \
+    && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
     && wget https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key \
+    && apt-key add winehq.key \
     && apt-key add Release.key \
     && apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
     && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/dists/xenial/main/' \
     && apt-get update \
-    && apt-get install --no-install-recommends --assume-yes winehq-staging \
+    && apt-get install libfaudio0 libasound2-plugins:i386 -y \
+    && apt-get install --install-recommends winehq-stable \
     && pip3 install python-valve \
     && apt-get clean \
     && rm -rf winehq.key /var/lib/apt/lists/* /tmp/* /var/tmp/*
