@@ -19,7 +19,7 @@ RUN dpkg --add-architecture i386 \
     && apt-key add Release.key \
     && apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
-    && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/dists/xenial/' \
+    && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/dists/xenial/main/binary-i386/' \
     && apt-get update \
     && apt-get install --no-install-recommends --assume-yes winehq-staging \
     && pip3 install python-valve \
