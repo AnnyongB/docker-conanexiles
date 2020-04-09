@@ -16,7 +16,6 @@ RUN dpkg --add-architecture i386 \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
-    && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/dists/xenial/main/' \
     && apt-get update \
     && apt-get install libfaudio0 libasound2-plugins:i386 -y \
     && apt-get install --install-recommends winehq-stable \
