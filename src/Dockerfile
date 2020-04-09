@@ -15,9 +15,9 @@ RUN dpkg --add-architecture i386 \
     && apt-get install -y apt-utils crudini python3-pip redis-tools software-properties-common supervisor unzip wget xvfb \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
-    && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
+    && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' \
     && apt-get update \
-    && apt-get install libfaudio0 libasound2-plugins:i386 -y \
+    && apt-get install libfaudio0 libasound2-plugins -y \
     && apt-get install --install-recommends winehq-stable \
     && pip3 install python-valve \
     && apt-get clean \
