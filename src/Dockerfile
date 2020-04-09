@@ -15,7 +15,7 @@ RUN dpkg --add-architecture i386 \
     && apt-get install -y apt-utils crudini python3-pip redis-tools software-properties-common supervisor unzip wget xvfb \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
-    && wget wget https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key \
+    && wget https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key \
     && apt-key add Release.key \
     && apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
