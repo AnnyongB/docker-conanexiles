@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 LABEL maintainer="Paul Steinlechner"
 
-ENV TIMEZONE=Europe/Vienna \
+ENV TIMEZONE=America/Vancouver \
     DEBIAN_FRONTEND=noninteractive \
     CONANEXILES_MASTERSERVER=1 \
     CONANEXILES_Game_RconPlugin_RconEnabled=1 \
@@ -12,7 +12,7 @@ ENV TIMEZONE=Europe/Vienna \
 
 RUN dpkg --add-architecture i386 \
     && apt-get update \
-    && apt-get install -y crudini python3-pip redis-tools software-properties-common supervisor unzip wget xvfb \
+    && apt-get install -y apt-utils crudini python3-pip redis-tools software-properties-common supervisor unzip wget xvfb \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
