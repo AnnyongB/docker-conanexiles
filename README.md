@@ -28,7 +28,7 @@ docker-compose pull
 `docker-compose up -d`
 
 #### Start one game service and redis
-`docker compose up -d redis && docker compose up -d ce0`
+`docker-compose up -d redis && docker-compose up -d ce0`
 
 ### Update image and rollout
 `docker-compose pull && docker-compose up -d`
