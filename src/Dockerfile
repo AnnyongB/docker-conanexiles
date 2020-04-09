@@ -17,7 +17,6 @@ RUN dpkg --add-architecture i386 \
     && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' \
     && wget https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key \
     && apt-key add winehq.key \
-    && apt-key add Release.key \
     && apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
     && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/dists/xenial/main/' \
