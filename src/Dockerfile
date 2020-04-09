@@ -16,6 +16,7 @@ RUN dpkg --add-architecture i386 \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
     && apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
+    && sudo apt-add-repository 'deb hhttps://dl.winehq.org/wine-builds/ubuntu/dists/bionic/main/' \
     && apt-get update \
     && apt-get install --no-install-recommends --assume-yes winehq-staging \
     && pip3 install python-valve \
