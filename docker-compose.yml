@@ -65,7 +65,7 @@ services:
     environment:
       - "TZ=America/Vancouver"
     volumes:
-      - redis:/data/
+      - redis:/redis_data/
 
 volumes:
     data:
