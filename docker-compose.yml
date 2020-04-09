@@ -68,5 +68,5 @@ services:
       - redis:/data/
 
 volumes:
-    data:/conanexiles
+    data:
     redis:
