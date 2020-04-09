@@ -16,6 +16,7 @@ RUN dpkg --add-architecture i386 \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
     && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' \
+    && add-apt-repository ppa:cybermax-dexter/sdl2-backport \
     && apt-get update \
     && apt-get install libfaudio0 libasound2-plugins -y \
     && apt-get install --install-recommends winehq-stable \
