@@ -19,7 +19,7 @@ services:
         - 7778:7778/udp
         - 27015:27015/udp
     volumes:
-        - data:/conanexiles
+        - data:/conanexiles0
 
   ce1:
     image: alinmear/docker-conanexiles:latest
@@ -38,7 +38,7 @@ services:
         - 7779:7777/udp
         - 27017:27015/udp
     volumes:
-        - data:/conanexiles
+        - data:/conanexiles1
 
   ce2:
     image: alinmear/docker-conanexiles:latest
@@ -57,10 +57,10 @@ services:
         - 7780:7777/udp
         - 27018:27015/udp
     volumes:
-        - data:/conanexiles
+        - data:/conanexiles2
 
   redis:
-    image: redis:5.0-alpine
+    image: redis:buster
     restart: unless-stopped
     environment:
       - "TZ=America/Vancouver"
