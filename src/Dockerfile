@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM arm32v7/python:2.7.13-jessie
 
-LABEL maintainer="Paul Steinlechner"
+LABEL maintainer="Hello"
 
 ENV TIMEZONE=America/Vancouver \
     DEBIAN_FRONTEND=noninteractive \
@@ -10,7 +10,7 @@ ENV TIMEZONE=America/Vancouver \
     CONANEXILES_Game_RconPlugin_RconPort=25575 \
     CONANEXILES_Game_RconPlugin_RconMaxKarma=60
 
-RUN dpkg --add-architecture i386 \
+RUN dpkg --add-architecture ARM \
     && apt-get update \
     && apt-get install -y apt-utils crudini python3-pip redis-tools software-properties-common supervisor unzip wget xvfb \
     && wget https://dl.winehq.org/wine-builds/winehq.key \
